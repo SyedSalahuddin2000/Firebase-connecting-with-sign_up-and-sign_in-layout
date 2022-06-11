@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         userEmail=findViewById(R.id.userEmail);
         userPassword=findViewById(R.id.userPassword);
         auth=FirebaseAuth.getInstance();
-        logintext=findViewById(R.id.logintext);
+        logintext=findViewById(R.id.register);
         logintext.setOnClickListener(new View.OnClickListener() {
 
             @Override

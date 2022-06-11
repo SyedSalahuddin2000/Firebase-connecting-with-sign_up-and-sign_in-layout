@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -21,6 +22,7 @@ public class login extends AppCompatActivity {
     EditText userName,userEmail,userPassword;
     FirebaseAuth auth;
     ProgressBar progressBar;
+    TextView register;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,7 @@ public class login extends AppCompatActivity {
 //        userName=findViewById(R.id.userName);
         userEmail=findViewById(R.id.userEmail);
         userPassword=findViewById(R.id.userPassword);
+        register=findViewById(R.id.register);
         auth=FirebaseAuth.getInstance();
         buttonRegister.setOnClickListener(new View.OnClickListener() {
 
@@ -66,6 +69,14 @@ public class login extends AppCompatActivity {
                     }
                 });
 
+            }
+        });
+        register.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(login.this, MainActivity.class);
+                startActivity(intent);
             }
         });
     }
